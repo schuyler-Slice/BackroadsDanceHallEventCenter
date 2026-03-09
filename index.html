@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backroads Dance Hall & Event Center | Palestine, TX</title>
+    <meta name="description" content="Palestine, Texas's favorite bar and dance hall. Cold drinks, live music every Saturday, karaoke, pool, and nightly events. Come out and have a good time at 108 W Oak St.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f0e17',    /* Deep nightlife black */
+                            gold: '#d4af37',    /* Classic Gold */
+                            cream: '#f0ede8',   /* Off white */
+                            brown: '#5d4037',   /* Rustic Brown */
+                            accent: '#8d6e63',  /* Light Brown */
+                            neon: {
+                                pink:   '#ff2d78',  /* Hot pink neon */
+                                teal:   '#00e5cc',  /* Cyan/teal neon */
+                                purple: '#c44dff',  /* Purple neon */
+                            }
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Bebas Neue', 'sans-serif'],
+                        body: ['Raleway', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body text-gray-700 bg-brand-cream antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white backdrop-blur-sm border-b border-gray-200 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#">
+                        <img src="https://res.cloudinary.com/b2bpr/image/upload/v1772816411/ME679712c09f91e005dc512ce8b62f6d4d_vu92t1.png" alt="Backroads Dance Hall & Event Center" class="h-20 w-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-brand-dark hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">Home</a>
+                    <a href="#about" class="text-brand-dark hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">About Us</a>
+                    <a href="#services" class="text-brand-dark hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">Services</a>
+                    <a href="#contact" class="px-6 py-2 bg-brand-neon-pink text-white font-bold uppercase tracking-wide rounded hover:bg-white hover:text-brand-dark transition-colors duration-300 neon-btn-pink">Contact</a>
+                </div>
+
+                <!-- Mobile Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-neon-pink focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-brand-dark border-t border-white/10">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-white/80 hover:text-brand-neon-teal border-b border-white/10">Home</a>
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-white/80 hover:text-brand-neon-teal border-b border-white/10">About Us</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-white/80 hover:text-brand-neon-teal border-b border-white/10">Services</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-brand-neon-pink font-bold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://res.cloudinary.com/b2bpr/image/upload/v1773076440/20260302072938_97339057_gxu85v.jpg');">
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="reveal-up">
+                <span class="block font-bold tracking-[0.2em] uppercase mb-4 text-sm sm:text-base text-brand-neon-teal neon-glow-teal">Palestine, Texas</span>
+                <h1 class="text-6xl sm:text-7xl md:text-9xl font-heading text-white mb-6 leading-none text-shadow hero-heading-glow">
+                    Where Texas Memories<br />Are Made
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-200 mb-10 font-light">
+                    Palestine's home for live music, cold drinks, and a good time. Pull up a stool, hit the dance floor, and stay a while.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="placeholder.html" class="px-8 py-4 bg-brand-neon-pink text-white font-bold uppercase tracking-wider rounded hover:bg-white hover:text-brand-dark transition-all duration-300 shadow-lg transform hover:-translate-y-1 neon-btn-pink">
+                        Upcoming Events
+                    </a>
+                    <a href="#services" class="px-8 py-4 bg-transparent border-2 border-brand-neon-teal text-brand-neon-teal font-bold uppercase tracking-wider rounded hover:bg-brand-neon-teal hover:text-brand-dark transition-all duration-300 shadow-lg neon-btn-teal">
+                        What's On
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/70 hover:text-brand-neon-pink transition-colors">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <!-- Image Grid -->
+                <div class="relative reveal-up mb-12 lg:mb-0">
+                    <div class="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-2xl w-2/3 mx-auto">
+                        <img src="https://res.cloudinary.com/b2bpr/image/upload/v1772816575/ME7739a48b7d5391b390b956d6bd8e0579_tdmtkm.png" alt="Backroads Interior" class="object-cover w-full h-full transform hover:scale-105 transition-duration-700 transition-transform duration-700">
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="reveal-up lg:pl-10">
+                    <span class="text-brand-neon-pink font-bold tracking-widest uppercase text-sm neon-glow-pink">Our Story</span>
+                    <h2 class="mt-2 text-5xl font-heading text-brand-dark mb-6">The Heart of East Texas Hospitality</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Nestled in the heart of Palestine, Backroads Dance Hall is the place locals come to unwind, cut loose, and feel at home. We've got cold drinks, a big dance floor, live music on the weekends, and a crowd that knows how to have a good time.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Whether you're here for karaoke with friends, a pool tournament, or to two-step to live Texas country on a Saturday night — you're always welcome at Backroads. We keep it real, keep it fun, and keep the drinks cold.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="h-px w-12 bg-brand-gold"></div>
+                        <span class="font-heading text-brand-dark font-bold text-xl italic">The Cartwright Family</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-brand-cream relative">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#ff2d78 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                <span class="text-brand-neon-teal font-bold tracking-widest uppercase text-sm neon-glow-teal">What We Offer</span>
+                <h2 class="mt-2 text-5xl font-heading text-brand-dark">Events & Experiences</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 reveal-up neon-card-teal">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/0 transition-colors z-10"></div>
+                        <img src="https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png" alt="Karaoke and Pool" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 text-center relative">
+                        <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-brand-neon-teal w-20 h-20 rounded-full flex items-center justify-center border-4 border-white shadow-md z-20 neon-icon-teal">
+                            <i class="fa-solid fa-microphone text-white text-3xl"></i>
+                        </div>
+                        <h3 class="mt-8 text-3xl font-heading text-brand-dark mb-3">Karaoke & Pool</h3>
+                        <p class="text-gray-600 mb-6">Grab a cue or grab the mic — our karaoke nights and pool tables bring the fun every time. Perfect for a night out with friends.</p>
+                        <a href="#contact" class="inline-block text-brand-neon-teal font-bold uppercase text-sm tracking-wider hover:opacity-70 transition-opacity">Learn More <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 reveal-up neon-card-purple" style="transition-delay: 100ms;">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/0 transition-colors z-10"></div>
+                        <img src="https://res.cloudinary.com/b2bpr/image/upload/v1773076440/AFDCD4C8-9B3C-4367-B1CE-277B692CF005_s4t33u.png" alt="Live Music" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 text-center relative">
+                        <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-brand-neon-purple w-20 h-20 rounded-full flex items-center justify-center border-4 border-white shadow-md z-20 neon-icon-purple">
+                            <i class="fa-solid fa-music text-white text-3xl"></i>
+                        </div>
+                        <h3 class="mt-8 text-3xl font-heading text-brand-dark mb-3">Live Music & Dance</h3>
+                        <p class="text-gray-600 mb-6">Experience the best of Texas country and local talent. Our massive dance floor and stage are built for unforgettable nights of entertainment.</p>
+                        <a href="#contact" class="inline-block text-brand-neon-purple font-bold uppercase text-sm tracking-wider hover:opacity-70 transition-opacity">View Schedule <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 reveal-up neon-card-pink" style="transition-delay: 200ms;">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/0 transition-colors z-10"></div>
+                        <img src="https://res.cloudinary.com/b2bpr/image/upload/v1773076850/Screenshot_2026-03-09_at_1.20.00_PM_oo02zx.png" alt="Drink Specials" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 text-center relative">
+                        <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-brand-neon-pink w-20 h-20 rounded-full flex items-center justify-center border-4 border-white shadow-md z-20 neon-icon-pink">
+                            <i class="fa-solid fa-martini-glass text-white text-3xl"></i>
+                        </div>
+                        <h3 class="mt-8 text-3xl font-heading text-brand-dark mb-3">Drink Specials</h3>
+                        <p class="text-gray-600 mb-6">Enjoy nightly drink specials crafted to keep the good times rolling. From cold beers to cocktails, we've got something for everyone.</p>
+                        <a href="#contact" class="inline-block text-brand-neon-pink font-bold uppercase text-sm tracking-wider hover:opacity-70 transition-opacity">See Specials <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Schedule Section -->
+    <section class="py-20 md:py-32 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#d4af37 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                <span class="text-brand-neon-teal font-bold tracking-widest uppercase text-sm neon-glow-teal">Plan Your Visit</span>
+                <h2 class="mt-2 text-5xl font-heading text-white">Weekly Schedule</h2>
+                <div class="w-24 h-1 bg-brand-neon-pink mx-auto mt-6 neon-divider-pink"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 reveal-up">
+
+                <!-- Tuesday -->
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-brand-neon-teal/60 hover:bg-white/10 transition-all duration-300">
+                    <p class="text-brand-neon-teal font-heading text-xl tracking-widest mb-1 neon-glow-teal">Tuesday</p>
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-4">6pm – Midnight</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center gap-2 text-white text-sm"><i class="fa-solid fa-8ball text-brand-neon-teal"></i> APA Pool</div>
+                        <div class="flex items-center justify-center gap-2 text-white text-sm"><i class="fa-solid fa-martini-glass text-brand-neon-teal"></i> Drink Specials</div>
+                    </div>
+                </div>
+
+                <!-- Wednesday -->
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-brand-neon-purple/60 hover:bg-white/10 transition-all duration-300">
+                    <p class="text-brand-neon-purple font-heading text-xl tracking-widest mb-1 neon-glow-purple">Wednesday</p>
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-4">6pm – Midnight</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center gap-2 text-white text-sm"><i class="fa-solid fa-bullseye text-brand-neon-purple"></i> Pineywoods Cornhole</div>
+                        <div class="flex items-center justify-center gap-2 text-white text-sm"><i class="fa-solid fa-martini-glass text-brand-neon-purple"></i> Drink Specials</div>
+                    </div>
+                </div>
+
+                <!-- Thursday -->
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-brand-neon-teal/60 hover:bg-white/10 transition-all duration-300">
+                    <p class="text-brand-neon-teal font-heading text-xl tracking-widest mb-1 neon-glow-teal">Thursday</p>
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-4">6pm – 2am</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center gap-2 text-white text-sm"><i class="fa-solid fa-microphone text-brand-neon-teal"></i> Karaoke w/ Big John</div>
+                        <div class="flex items-center justify-center gap-2 text-white text-sm"><i class="fa-solid fa-8ball text-brand-neon-teal"></i> Pool Tournament</div>
+                    </div>
+                </div>
+
+                <!-- Friday -->
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-brand-neon-pink/60 hover:bg-white/10 transition-all duration-300">
+                    <p class="text-brand-neon-pink font-heading text-xl tracking-widest mb-1 neon-glow-pink">Friday</p>
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-4">6pm – 2am</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center gap-2 text-white text-sm"><i class="fa-solid fa-microphone text-brand-neon-pink"></i> Karaoke Night</div>
+                    </div>
+                </div>
+
+                <!-- Saturday -->
+                <div class="bg-brand-neon-pink/10 border border-brand-neon-pink/40 rounded-xl p-6 text-center hover:bg-brand-neon-pink/20 transition-all duration-300 neon-card-saturday">
+                    <p class="text-brand-neon-pink font-heading text-xl tracking-widest mb-1 neon-glow-pink">Saturday</p>
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-4">6pm – 2am</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-center gap-2 text-white text-sm"><i class="fa-solid fa-guitar text-brand-neon-pink"></i> Live Music</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Closed days note -->
+            <p class="text-center text-gray-500 text-sm mt-8 reveal-up">
+                <i class="fa-solid fa-moon mr-2"></i>Closed Sunday & Monday
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-brand-neon-pink font-bold tracking-widest uppercase text-sm neon-glow-pink">Get In Touch</span>
+                <h2 class="mt-2 text-5xl font-heading text-brand-dark">Visit Backroads</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-0 shadow-2xl rounded-2xl overflow-hidden reveal-up">
+                <!-- Contact Info -->
+                <div class="bg-brand-dark p-10 md:p-14 text-white flex flex-col justify-center">
+                    <h3 class="text-3xl font-heading text-brand-neon-teal mb-8 neon-glow-teal">Contact Information</h3>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brand-neon-teal">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div class="ml-6">
+                                <p class="text-sm text-gray-400 uppercase tracking-wider font-bold mb-1">Address</p>
+                                <p class="text-lg font-medium">201 W. Oak St. </p>
+                                <p class="text-lg font-medium">Palestine, Texas 75801</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brand-neon-pink">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div class="ml-6">
+                                <p class="text-sm text-gray-400 uppercase tracking-wider font-bold mb-1">Phone</p>
+                                <a href="tel:9033529992" class="text-lg font-medium hover:text-brand-neon-pink transition-colors">(903) 352-9992</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brand-neon-purple">
+                                <i class="fa-solid fa-envelope text-xl"></i>
+                            </div>
+                            <div class="ml-6">
+                                <p class="text-sm text-gray-400 uppercase tracking-wider font-bold mb-1">Email</p>
+                                <a href="mailto:crystalcartwright84@gmail.com" class="text-lg font-medium hover:text-brand-neon-purple transition-colors break-all">crystalcartwright84@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 pt-10 border-t border-white/10">
+                        <p class="text-gray-400 italic">"We can't wait to welcome you."</p>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="bg-gray-200 h-96 lg:h-auto map-container relative">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=201%20W%20Oak%20St%2C%20Palestine%2C%20TX%2075801&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        aria-hidden="false" 
+                        tabindex="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-white/10 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center">
+                <a href="#" class="text-brand-neon-pink font-heading text-4xl tracking-wider uppercase mb-6 neon-glow-pink">
+                    <i class="fa-solid fa-music mr-2"></i> Backroads
+                </a>
+                <p class="text-gray-400 text-center max-w-md mb-8 text-sm">
+                    Palestine's bar and dance hall for live music, good drinks, and great nights.
+                </p>
+
+                <div class="flex space-x-6 mb-8">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-neon-pink hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-neon-purple hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p class="text-center md:text-left">&copy; 2025 Start Slice LLC. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'py-0');
+            } else {
+                navbar.classList.remove('shadow-lg', 'py-0');
+            }
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // GSAP Animations (Subtle Polish)
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Simple parallax for hero text
+        gsap.to(".hero-overlay", {
+            scrollTrigger: {
+                trigger: "#home",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            },
+            backgroundColor: "rgba(28, 25, 23, 0.9)" 
+        });
+    </script>
+</body>
+</html>

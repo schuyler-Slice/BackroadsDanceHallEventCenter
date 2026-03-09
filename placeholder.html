@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events | Backroads Dance Hall & Event Center</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f0e17',
+                            gold: '#d4af37',
+                            cream: '#f0ede8',
+                            brown: '#5d4037',
+                            accent: '#8d6e63',
+                            neon: {
+                                pink:   '#ff2d78',
+                                teal:   '#00e5cc',
+                                purple: '#c44dff',
+                            }
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Bebas Neue', 'sans-serif'],
+                        body: ['Raleway', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .neon-glow-pink  { text-shadow: 0 0 8px rgba(255,45,120,0.9),  0 0 20px rgba(255,45,120,0.5); }
+        .neon-glow-teal  { text-shadow: 0 0 8px rgba(0,229,204,0.9),   0 0 20px rgba(0,229,204,0.5); }
+        .neon-glow-purple{ text-shadow: 0 0 8px rgba(196,77,255,0.9),  0 0 20px rgba(196,77,255,0.5); }
+        .neon-btn-pink   { box-shadow: 0 0 12px rgba(255,45,120,0.5),  0 0 24px rgba(255,45,120,0.2); }
+        .neon-btn-pink:hover { box-shadow: none; }
+        .neon-divider-pink { box-shadow: 0 0 8px rgba(255,45,120,0.7), 0 0 16px rgba(255,45,120,0.3); }
+
+        .dot-pattern {
+            background-image: radial-gradient(#ff2d78 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.6; }
+            50%       { opacity: 1; }
+        }
+        .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-body text-gray-200 bg-brand-dark antialiased overflow-x-hidden min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/10 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <img src="https://res.cloudinary.com/b2bpr/image/upload/v1772816411/ME679712c09f91e005dc512ce8b62f6d4d_vu92t1.png" alt="Backroads Dance Hall & Event Center" class="h-20 w-auto">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html#home" class="text-white/80 hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">Home</a>
+                    <a href="index.html#about" class="text-white/80 hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">About Us</a>
+                    <a href="index.html#services" class="text-white/80 hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">Services</a>
+                    <a href="index.html#contact" class="px-6 py-2 bg-brand-neon-pink text-white font-bold uppercase tracking-wide rounded hover:bg-white hover:text-brand-dark transition-colors duration-300 neon-btn-pink">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <a href="index.html" class="text-white/80 hover:text-brand-neon-teal text-sm uppercase tracking-widest font-semibold">
+                        <i class="fa-solid fa-arrow-left mr-2"></i>Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex flex-col items-center justify-center min-h-screen px-4 relative">
+
+        <!-- Subtle dot pattern -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none dot-pattern"></div>
+
+        <div class="relative z-10 text-center max-w-2xl mx-auto">
+
+            <!-- Icon -->
+            <div class="mb-8 flex justify-center">
+                <div class="w-24 h-24 rounded-full bg-brand-neon-pink/10 border border-brand-neon-pink/40 flex items-center justify-center animate-pulse-slow" style="box-shadow: 0 0 24px rgba(255,45,120,0.25);">
+                    <i class="fa-solid fa-calendar-days text-brand-neon-pink text-4xl neon-glow-pink"></i>
+                </div>
+            </div>
+
+            <!-- Label -->
+            <span class="block text-brand-neon-teal font-bold tracking-[0.2em] uppercase text-sm mb-4 neon-glow-teal">
+                Backroads Dance Hall &amp; Event Center
+            </span>
+
+            <!-- Heading -->
+            <h1 class="text-6xl sm:text-8xl font-heading text-white mb-4 leading-none neon-glow-pink" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.6), 0 0 40px rgba(255,45,120,0.2);">
+                Upcoming Events
+            </h1>
+
+            <!-- Divider -->
+            <div class="w-24 h-1 bg-brand-neon-pink mx-auto my-6 neon-divider-pink rounded-full"></div>
+
+            <!-- Message -->
+            <p class="text-xl text-gray-400 mb-2 font-light tracking-wide">
+                Something exciting is coming.
+            </p>
+            <p class="text-gray-500 mb-10 tracking-wider">
+                Check back soon for our full events calendar — live music, karaoke nights, tournaments, and more.
+            </p>
+
+            <!-- CTA -->
+            <a href="index.html#contact" class="inline-block px-8 py-4 bg-brand-neon-pink text-white font-bold uppercase tracking-wider rounded hover:bg-white hover:text-brand-dark transition-all duration-300 shadow-lg neon-btn-pink">
+                <i class="fa-solid fa-envelope mr-2"></i>Get Notified
+            </a>
+
+            <!-- Back link -->
+            <div class="mt-8">
+                <a href="index.html" class="text-sm text-gray-500 hover:text-brand-neon-teal transition-colors uppercase tracking-widest">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-8 text-center text-gray-500 text-xs">
+        <p>&copy; 2025 Start Slice LLC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
