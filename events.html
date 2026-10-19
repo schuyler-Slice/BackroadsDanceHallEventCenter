@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events | Backroads Dance Hall & Event Center</title>
+    <meta name="description" content="Upcoming live music and special events at Backroads Dance Hall & Event Center, 201 W. Oak St., Palestine, Texas.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f0e17',
+                            gold: '#d4af37',
+                            cream: '#f0ede8',
+                            brown: '#5d4037',
+                            accent: '#8d6e63',
+                            neon: {
+                                pink:   '#ff2d78',
+                                teal:   '#00e5cc',
+                                purple: '#c44dff',
+                            }
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Bebas Neue', 'sans-serif'],
+                        body: ['Raleway', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .neon-glow-pink  { text-shadow: 0 0 8px rgba(255,45,120,0.9),  0 0 20px rgba(255,45,120,0.5); }
+        .neon-glow-teal  { text-shadow: 0 0 8px rgba(0,229,204,0.9),   0 0 20px rgba(0,229,204,0.5); }
+        .neon-glow-purple{ text-shadow: 0 0 8px rgba(196,77,255,0.9),  0 0 20px rgba(196,77,255,0.5); }
+        .neon-btn-pink   { box-shadow: 0 0 12px rgba(255,45,120,0.5),  0 0 24px rgba(255,45,120,0.2); }
+        .neon-btn-pink:hover { box-shadow: none; }
+        .neon-divider-pink { box-shadow: 0 0 8px rgba(255,45,120,0.7), 0 0 16px rgba(255,45,120,0.3); }
+
+        .dot-pattern {
+            background-image: radial-gradient(#ff2d78 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="font-body text-gray-200 bg-brand-dark antialiased overflow-x-hidden min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/10 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <img src="https://res.cloudinary.com/b2bpr/image/upload/v1772816411/ME679712c09f91e005dc512ce8b62f6d4d_vu92t1.png" alt="Backroads Dance Hall & Event Center" class="h-20 w-auto">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html#home" class="text-white/80 hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">Home</a>
+                    <a href="index.html#about" class="text-white/80 hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">About Us</a>
+                    <a href="index.html#services" class="text-white/80 hover:text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">Services</a>
+                    <a href="events.html" class="text-brand-neon-teal transition-colors text-sm uppercase tracking-widest font-semibold">Events</a>
+                    <a href="index.html#contact" class="px-6 py-2 bg-brand-neon-pink text-white font-bold uppercase tracking-wide rounded hover:bg-white hover:text-brand-dark transition-colors duration-300 neon-btn-pink">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <a href="index.html" class="text-white/80 hover:text-brand-neon-teal text-sm uppercase tracking-widest font-semibold">
+                        <i class="fa-solid fa-arrow-left mr-2"></i>Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative min-h-screen px-4 pt-40 pb-24">
+
+        <!-- Subtle dot pattern -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none dot-pattern"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto">
+
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span class="block text-brand-neon-teal font-bold tracking-[0.2em] uppercase text-sm mb-4 neon-glow-teal">
+                    Backroads Dance Hall &amp; Event Center
+                </span>
+                <h1 class="text-6xl sm:text-8xl font-heading text-white mb-4 leading-none neon-glow-pink" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.6), 0 0 40px rgba(255,45,120,0.2);">
+                    Upcoming Events
+                </h1>
+                <div class="w-24 h-1 bg-brand-neon-pink mx-auto my-6 neon-divider-pink rounded-full"></div>
+                <p class="text-xl text-gray-400 font-light tracking-wide">
+                    Live music, dancing, and big nights in downtown Palestine.
+                </p>
+            </div>
+
+            <!-- Event List (each event is hidden automatically once its data-event-ends time has passed) -->
+            <div class="space-y-10">
+
+                <!-- Noche Latina Ladies Night — Fri Oct 23 -->
+                <article data-event-ends="2026-10-24T02:00:00-05:00" class="flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-neon-pink/60 transition-colors duration-300">
+                    <a href="images/events/2026-10-23-noche-latina.jpg" target="_blank" rel="noopener" class="relative flex justify-center p-6 overflow-hidden bg-black/40">
+                        <div class="absolute inset-0 bg-cover bg-center blur-2xl scale-110 opacity-40" style="background-image: url('images/events/2026-10-23-noche-latina.jpg');"></div>
+                        <img src="images/events/2026-10-23-noche-latina.jpg" alt="Noche Latina Ladies Night flyer — Friday, October 23, 10 PM to 2 AM, with Tete Martinez Entertainment and mechanical bull rides" class="relative w-full max-w-[640px] rounded-lg shadow-2xl">
+                    </a>
+                    <div class="p-8 md:p-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="flex-shrink-0 w-16 text-center rounded-lg border border-brand-neon-pink/50 py-2">
+                                <span class="block text-xs uppercase tracking-widest text-brand-neon-pink font-bold">Oct</span>
+                                <span class="block text-3xl font-heading text-white leading-none">23</span>
+                            </div>
+                            <span class="text-brand-neon-pink font-bold tracking-widest uppercase text-sm neon-glow-pink">Ladies Night</span>
+                        </div>
+                        <h2 class="text-5xl font-heading text-white leading-none mb-2">Noche Latina</h2>
+                        <p class="text-gray-400 mb-6">Presented by Tete Martinez Entertainment</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-3 text-white"><i class="fa-solid fa-calendar-days w-5 text-brand-neon-pink"></i> Friday, October 23</div>
+                            <div class="flex items-center gap-3 text-white"><i class="fa-solid fa-clock w-5 text-brand-neon-pink"></i> 10:00 PM – 2:00 AM</div>
+                            <div class="flex items-center gap-3 text-white"><i class="fa-solid fa-star w-5 text-brand-neon-pink"></i> Mechanical bull rides!</div>
+                        </div>
+                        <p class="text-gray-400 italic">Viernes, 23 de octubre · 10:00 PM – 2:00 AM</p>
+                    </div>
+                </article>
+
+                <!-- Dogwood Kings — Sat Oct 24 -->
+                <article data-event-ends="2026-10-25T02:00:00-05:00" class="flex flex-col md:flex-row bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-neon-teal/60 transition-colors duration-300">
+                    <a href="images/events/2026-10-24-dogwood-kings.jpg" target="_blank" rel="noopener" class="relative md:w-2/5 flex items-center justify-center p-6 overflow-hidden bg-black/40">
+                        <div class="absolute inset-0 bg-cover bg-center blur-2xl scale-110 opacity-40" style="background-image: url('images/events/2026-10-24-dogwood-kings.jpg');"></div>
+                        <img src="images/events/2026-10-24-dogwood-kings.jpg" alt="Dogwood Kings flyer — Saturday Night, October 24 at Backroads Dance Hall & Event Center" class="relative max-h-[28rem] w-auto rounded-lg shadow-2xl">
+                    </a>
+                    <div class="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="flex-shrink-0 w-16 text-center rounded-lg border border-brand-neon-teal/50 py-2">
+                                <span class="block text-xs uppercase tracking-widest text-brand-neon-teal font-bold">Oct</span>
+                                <span class="block text-3xl font-heading text-white leading-none">24</span>
+                            </div>
+                            <span class="text-brand-neon-teal font-bold tracking-widest uppercase text-sm neon-glow-teal">Live Music</span>
+                        </div>
+                        <h2 class="text-5xl font-heading text-white leading-none mb-6">Dogwood Kings</h2>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-3 text-white"><i class="fa-solid fa-calendar-days w-5 text-brand-neon-teal"></i> Saturday, October 24</div>
+                            <div class="flex items-center gap-3 text-white"><i class="fa-solid fa-moon w-5 text-brand-neon-teal"></i> Saturday Night</div>
+                        </div>
+                        <p class="text-gray-400">Dogwood Kings take the Backroads stage for a Saturday night of live music and dancing.</p>
+                    </div>
+                </article>
+
+                <!-- Perfect Stranger with Dogwood Kings — Sat Dec 19 -->
+                <article data-event-ends="2026-12-20T02:00:00-06:00" class="flex flex-col md:flex-row bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-neon-purple/60 transition-colors duration-300">
+                    <a href="images/events/2026-12-19-perfect-stranger.jpg" target="_blank" rel="noopener" class="relative md:w-2/5 flex items-center justify-center p-6 overflow-hidden bg-black/40">
+                        <div class="absolute inset-0 bg-cover bg-center blur-2xl scale-110 opacity-40" style="background-image: url('images/events/2026-12-19-perfect-stranger.jpg');"></div>
+                        <img src="images/events/2026-12-19-perfect-stranger.jpg" alt="Perfect Stranger with Dogwood Kings flyer — December 19, doors 6pm, 7pm to 2am, presale $30, day of show $40" class="relative max-h-[28rem] w-auto rounded-lg shadow-2xl" loading="lazy">
+                    </a>
+                    <div class="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="flex-shrink-0 w-16 text-center rounded-lg border border-brand-neon-purple/50 py-2">
+                                <span class="block text-xs uppercase tracking-widest text-brand-neon-purple font-bold">Dec</span>
+                                <span class="block text-3xl font-heading text-white leading-none">19</span>
+                            </div>
+                            <span class="text-brand-neon-purple font-bold tracking-widest uppercase text-sm neon-glow-purple">Concert</span>
+                        </div>
+                        <h2 class="text-5xl font-heading text-white leading-none mb-2">Perfect Stranger</h2>
+                        <p class="text-gray-400 mb-6">With Dogwood Kings</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-3 text-white"><i class="fa-solid fa-calendar-days w-5 text-brand-neon-purple"></i> Saturday, December 19</div>
+                            <div class="flex items-center gap-3 text-white"><i class="fa-solid fa-clock w-5 text-brand-neon-purple"></i> Doors 6pm · Show 7pm – 2am</div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-8">
+                            <div class="bg-white/5 rounded-lg px-4 py-3">
+                                <p class="text-xs uppercase tracking-wider text-gray-400">Presale</p>
+                                <p class="text-2xl font-heading text-white">$30</p>
+                            </div>
+                            <div class="bg-white/5 rounded-lg px-4 py-3">
+                                <p class="text-xs uppercase tracking-wider text-gray-400">Day of Show</p>
+                                <p class="text-2xl font-heading text-white">$40</p>
+                            </div>
+                            <div class="bg-white/5 rounded-lg px-4 py-3">
+                                <p class="text-xs uppercase tracking-wider text-gray-400">4 Top Table</p>
+                                <p class="text-2xl font-heading text-white">$300</p>
+                            </div>
+                            <div class="bg-white/5 rounded-lg px-4 py-3">
+                                <p class="text-xs uppercase tracking-wider text-gray-400">6 Top Table</p>
+                                <p class="text-2xl font-heading text-white">$500</p>
+                            </div>
+                        </div>
+                        <a href="https://outhousetickets.com/events/backroads-perfect-stranger/tickets" target="_blank" rel="noopener" class="self-start px-8 py-4 bg-brand-neon-pink text-white font-bold uppercase tracking-wider rounded hover:bg-white hover:text-brand-dark transition-all duration-300 shadow-lg neon-btn-pink">
+                            <i class="fa-solid fa-ticket mr-2"></i>Buy Tickets
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Shown when every event above has passed -->
+            <div id="no-events" class="hidden text-center max-w-2xl mx-auto">
+                <p class="text-xl text-gray-400 mb-2 font-light tracking-wide">
+                    Something exciting is coming.
+                </p>
+                <p class="text-gray-500 mb-10 tracking-wider">
+                    Check back soon for our full events calendar — live music, karaoke nights, tournaments, and more.
+                </p>
+                <a href="index.html#contact" class="inline-block px-8 py-4 bg-brand-neon-pink text-white font-bold uppercase tracking-wider rounded hover:bg-white hover:text-brand-dark transition-all duration-300 shadow-lg neon-btn-pink">
+                    <i class="fa-solid fa-envelope mr-2"></i>Get Notified
+                </a>
+            </div>
+
+            <!-- Back link -->
+            <div class="mt-16 text-center">
+                <a href="index.html" class="text-sm text-gray-500 hover:text-brand-neon-teal transition-colors uppercase tracking-widest">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-8 text-center text-gray-500 text-xs">
+        <p>&copy; 2025 Start Slice LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hide events that have already ended; show the empty state if none are left
+        const now = new Date();
+        document.querySelectorAll('[data-event-ends]').forEach(event => {
+            if (new Date(event.dataset.eventEnds) < now) {
+                event.remove();
+            }
+        });
+        if (!document.querySelector('[data-event-ends]')) {
+            document.getElementById('no-events').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
